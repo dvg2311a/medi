@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>MediControl Login</title>
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+
+
+        <div class="container-login">
+            <div class="container-logo">
+                <div class="img-logo" title="Logo de MediControl"></div>
+            </div>
+
+            <div class="container-form">
+                <div class="text"><span>Inicio de sesión</span></div>
+
+                <form action="{{ route('login') }}" method="POST" class="login" title="Formulario de inicio de sesión">
+                    <div class="items-form">
+                        <div class="input-class">
+                            <i class="fa-solid fa-circle-user"></i>
+                            <input type="email" name="email" class=" @error('email') is-invalid @enderror"
+                                required autocomplete="email" id="email"
+                                title="Campo de correo electrónico">
+                                <label for="email" class="email">Correo</label>
+                        </div>
+                    </div>
+
+                    <div class="items-form">
+                        <div class="input-class pass">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" name="password" id="password" class=" @error('password') is-invalid @enderror"
+                                required autocomplete="current-password" title="Campo para ingresar la contraseña">
+                                <label for="password" class="password">Contraseña</label>
+                        
+                        </div>
+
+                        
+                    </div>
+
+                    <div class="btn-login">
+                        <button type="submit" title="Botón para iniciar sesión">Iniciar sesión</button>
+                    </div>
+
+                    <div class="message">
+                        <p>¡Ingresar la cuenta que fue brindada en el centro médico!</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+</body>
+</html>

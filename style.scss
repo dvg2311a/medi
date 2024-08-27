@@ -1,0 +1,207 @@
+$bg-color: #ffffff;
+$color-text: #3d405b;
+$border-radius: 6.25rem;
+$transform-scale: scale(0.9);
+$transition: all .2s ease-in-out;
+$font-family: "Popins", sans-serif;
+
+
+.container-login {
+    width: 100%;
+    z-index: -12;
+    display: flex;
+    margin-top: -2%;
+    height: 33.1rem;
+    font-size: 62.5%;
+    position: absolute;
+    background: $bg-color;
+    font-family: $font-family;
+    justify-content: space-around;
+
+    & .container-logo {
+        width: 100%;
+        z-index: -11;
+        display: flex;
+        align-items: start;
+        position: absolute;
+        padding-top: 0.5rem;
+        place-content: center;
+        background: $color-text;
+        height: clamp(100px, 15rem, 21rem);
+
+        & .img-logo {
+            width: 8rem;
+            height: 10rem;
+            background-size: 99%;
+            object-fit: scale-down;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image: url(/resources/img/logoSvg.svg);
+        }
+    }
+
+    & .container-form {
+        z-index: 200;
+        display: flex;
+        height: 24rem;
+        margin-top: 9rem;
+        align-items: center;
+        background: $bg-color;
+        flex-direction: column;
+        border-radius: 1.25rem;
+        justify-content: center;
+        width: clamp(14rem, 20.7rem, 23.9rem);
+        box-shadow: 1px 1px 8px -6px $color-text, -1px -1px 8px -6px $color-text;
+
+        & .text {
+            padding: 0.5rem;
+            margin-top: -9rem;
+            margin-bottom: 1rem;
+
+            & span {
+                font-weight: 600;
+                font-size: 1.4rem;
+                color: $color-text;
+                text-transform: uppercase;
+            }
+        }
+
+        & .items-form {
+            width: 20rem;
+            display: flex;
+            justify-content: center;
+
+            & .span-pass {
+                font-weight: 500;
+                position: absolute;
+                translate: 72.5% 62px;
+
+                & a {
+                    font-size: 0.58rem;
+                    color: $color-text;
+                }
+            }
+
+            & .input-class {
+                width: 290px;
+                height: 2.5rem;
+                margin-top: 10px;
+                justify-content: center;
+                border: 1px solid $color-text;
+                border-radius: $border-radius;
+
+                &.pass {
+                    margin-top: 15px;
+                    margin-bottom: -10px;
+                }
+            }
+
+            i {
+                font-size: 1.7rem;
+                color: $color-text;
+                transform: translate(7px, 6px);
+            }
+
+            & input {
+                width: 15rem;
+                height: 2rem;
+                border: none;
+                outline: none;
+                font-size: 0.9rem;
+                padding-left: 10px;
+                background: $bg-color;
+                border-radius: $border-radius;
+                transform: translate(5px, 2px);
+            }
+
+            input:-webkit-autofill,
+            input:-webkit-autofill:hover,
+            input:-webkit-autofill:focus {
+                background: $bg-color;
+                box-shadow: 0 0 0 1000px $bg-color inset;
+                -webkit-box-shadow: 0 0 0 1000px $bg-color inset;
+                transition: background-color 5000s ease-in-out 0s;
+            }
+
+            & .email {
+                left: 42%;
+                top: 51.25%;
+                font-size: 0.8rem;
+                color: $color-text;
+                position: absolute;
+                pointer-events: none;
+                transition: $transition;
+            }
+
+
+            input:focus + .email,
+            input:valid + .email {
+                top: 47.2%;
+                background: $bg-color;
+                transition: $transition;
+            }
+
+            .password {
+                left: 42%;
+                top: 61.5%;
+                font-size: 0.8rem;
+                position: absolute;
+                color: $color-text;
+                pointer-events: none;
+                transition: $transition;
+            }
+
+            & input:focus + .password,
+            input:valid + .password {
+                top: 57.7%;
+                background: $bg-color;
+                transition: $transition;
+            }
+        }
+
+        .btn-login {
+            top: 77%;
+            left: 50%;
+            width: 290px;
+            height: 2rem;
+            display: flex;
+            position: absolute;
+            justify-content: center;
+            transform: translateX(-50%);
+
+            & button {
+                width: 100%;
+                border: none;
+                font-size: 1rem;
+                color: $bg-color;
+                background: $color-text;
+                border-radius: $border-radius;
+
+
+
+            }
+
+            & :active{
+                    transform: $transform-scale;
+                    transition: $transition;
+                }
+        }
+
+        & .message{
+            bottom: 1%;
+            left: 50%;
+            width: 270px;
+            height: 50px;
+            position: absolute;
+            margin-bottom: 10px;
+            transform: translateX(-50%);
+
+            & p{
+                font-size: .7rem;
+                text-wrap: pretty;
+                color: $color-text;
+                text-align: center;
+            }
+        }
+    }
+}
